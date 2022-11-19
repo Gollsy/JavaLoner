@@ -1,5 +1,6 @@
 package com.gollsy.alogrithm.tree;
 
+import com.gollsy.alogrithm.entity.queue.SqQueue;
 import com.gollsy.alogrithm.entity.tree.BiTree;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,7 +10,7 @@ import static com.gollsy.alogrithm.tree.BiTreeTool.generateEasyBiTree;
  * @author Admin
  * @version 1.0
  * @className BiTreeTraversal
- * @description 二叉树的先序、中序、后序遍历
+ * @description 二叉树的先序、中序、后序、层序遍历
  * @date 2022/11/18 16:19
  */
 public class BiTreeTraversal {
@@ -155,6 +156,31 @@ public class BiTreeTraversal {
             }
         }
     }
+
+    /**
+     * 【循环】【层序】遍历
+     *
+     * 从上至下每一个元素依次入队列，然后取出将其子节点放入队列
+     * @param biTree
+     */
+    public static void levelOrderByLoop(BiTree biTree){
+        SqQueue<BiTree> queue = new SqQueue<>(BiTree.class);
+        //根节点入队列
+        queue.enQueue(biTree);
+        BiTree point;
+        //循环打印队列中的节点
+        while(!queue.isEmpty()){
+            point = queue.deQueue();
+            //子节点入队
+            if(point.lChild!=null){
+                queue.enQueue(point.lChild);
+            }
+            if(point.rChild!=null){
+                queue.enQueue(point.rChild);
+            }
+            visit(point);
+        }
+    }
     /* 二叉树遍历 END **/
 
     /**
@@ -191,6 +217,9 @@ public class BiTreeTraversal {
         print("【递归】【后序】遍历结果是：");
         postOrderByLoop(biTree);
         print("【循环】【后序】遍历结果是：");
+        //层序遍历
+        levelOrderByLoop(biTree);
+        print("【循环】【层序】遍历结果是：");
     }
 }
 
