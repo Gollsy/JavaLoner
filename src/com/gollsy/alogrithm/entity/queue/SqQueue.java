@@ -94,4 +94,11 @@ public class SqQueue<T> {
         return (rear-front+MAX_SIZE)%MAX_SIZE;
     }
 
+    public int getRear() {
+        return rear;
+    }
+
+    public int getFront() {
+        return front;
+    }
 }
