@@ -24,6 +24,9 @@ public class BiNode<T extends BiNode> {
         this.data = data;
     }
 
+    public BiNode() {
+    }
+
     @Override
     public String toString() {
         return data;
@@ -36,7 +39,7 @@ public class BiNode<T extends BiNode> {
      *
      * @return
      * @see com.gollsy.alogrithm.tree.BiTreeTool#heightByRecursion(BiTree)
-     * @see com.gollsy.alogrithm.tree.BiTreeTool#heightByInOrderLoop(BiTree)
+     * @see com.gollsy.alogrithm.tree.BiTreeTool#heightByPreOrderLoop(BiTree)
      */
     public int height() {
         BiNode point = this;
@@ -80,15 +83,48 @@ public class BiNode<T extends BiNode> {
             if (point.rChild != null) {
                 queue.enQueue(point.rChild);
             }
-            if(last == queue.getFront()){
+            if (last == queue.getFront()) {
                 tLevel++;
-                if(tLevel == level)
+                if (tLevel == level)
                     return width;
-                width=0;
+                width = 0;
                 last = queue.getRear();
             }
         }
         return 0;
     }
 
+    /**
+     * 删除二叉树中指定内容的节点，并将其子树全部删除
+     *
+     * @param data
+     * @return
+     */
+    public void deleteEqual(String data) {
+        SqQueue<BiNode> queue = new SqQueue<>(BiNode.class);
+        BiNode point = this;
+        queue.enQueue(point);
+        while (!queue.isEmpty()) {
+            point = queue.deQueue();
+            if(point.lChild!=null ){
+                if (point.lChild.data==null && data!=null) {
+                    queue.enQueue(point.lChild);
+                } else if (data != null && !data.equals(point.lChild.data)) {
+                    queue.enQueue(point.lChild);
+                }else{
+                    point.lChild=null;
+                }
+            }
+            if(point.rChild!=null ){
+                if (data==null && point.rChild.data!=null) {
+                    queue.enQueue(point.rChild);
+                } else if (data != null && !data.equals(point.rChild.data)) {
+                    queue.enQueue(point.rChild);
+                }else{
+                    point.rChild=null;
+                }
+            }
+
+        }
+    }
 }

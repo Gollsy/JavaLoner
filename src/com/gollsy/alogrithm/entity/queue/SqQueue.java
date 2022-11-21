@@ -53,7 +53,7 @@ public class SqQueue<T> {
      * @return
      */
     public boolean isFull(){
-        //上次操作是入队，由此导致首尾指针相等，说明是栈空；
+        //上次操作是入队，由此导致首尾指针相等，说明是栈满；
 //        return !flag && (this.front == this.rear);
         //如果rear指向了front前一个节点，则表示已满；
         //这会导致队列浪费一个元素
