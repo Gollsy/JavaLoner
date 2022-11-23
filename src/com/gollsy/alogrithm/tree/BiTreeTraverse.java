@@ -13,7 +13,7 @@ import static com.gollsy.alogrithm.tree.BiTreeTool.generateEasyBiTree;
  * @description 二叉树的先序、中序、后序、层序遍历
  * @date 2022/11/18 16:19
  */
-public class BiTreeTraversal {
+public class BiTreeTraverse {
 
     private static BiTree DefaultNode = new BiTree("Null Node");
 

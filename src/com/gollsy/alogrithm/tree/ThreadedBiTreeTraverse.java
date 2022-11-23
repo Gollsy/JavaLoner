@@ -10,7 +10,7 @@ import static com.gollsy.alogrithm.tree.BiTreeTool.generateEasyBiTree;
  * @description 线索二叉树
  * @date 2022/11/18 20:07
  */
-public class ThreadedBiTreeTraversal extends BiTreeTraversal {
+public class ThreadedBiTreeTraverse extends BiTreeTraverse {
     private static ThreadedBiTree prevNode = null;
 
     /**
