@@ -1,5 +1,9 @@
 package com.gollsy.alogrithm.entity.graph;
 
+import com.gollsy.alogrithm.entity.tree.UnionFindSets;
+
+import java.util.Set;
+
 /**
  * @author Admin
  * @version 1.0
@@ -19,17 +23,25 @@ public class AdjMultiLinkedTabGraph {
      */
     public int nodeNum,arcNum;
 
+    public Arc findSmallestOutsideAdjArc(Set<VNode> node) {
+        return null;
+    }
+
+    public Arc findSmallestArcInUnconnectedComponents(UnionFindSets<VNode> connectedComponents) {
+        return null;
+    }
+
     /**
      * 图中的边/弧
      */
-    static class Arc {
+    public static class Arc {
         //该边是否被搜索过
         public boolean mark;
         //该边的一个顶点
         public int oneEdge;
         //依附于oneEdge的另一条边
         public Arc oneEdgeBro;
-        //该边的令一个顶点
+        //该边的另一个顶点
         public int anotherEdge;
         //依附于anotherEdge的另一条边
         public Arc anotherEdgeBro;
@@ -38,7 +50,7 @@ public class AdjMultiLinkedTabGraph {
     /**
      * 图中的节点
      */
-    static class VNode{
+    public static class VNode{
         public String data;
         //当前节点的一条边，不唯一
         public Arc firstArc;

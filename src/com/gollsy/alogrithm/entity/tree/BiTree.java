@@ -12,7 +12,7 @@ import java.lang.reflect.Type;
  * @description 基础的二叉树
  * @date 2022/11/18 16:13
  */
-public class BiTree extends BiNode<BiTree>{
+public class BiTree extends BiNode<BiTree,String>{
 
     public BiTree(String data) {
         super(data);

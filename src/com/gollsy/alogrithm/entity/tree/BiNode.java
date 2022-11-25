@@ -9,18 +9,18 @@ import com.gollsy.alogrithm.entity.queue.SqQueue;
  * @description 二叉树节点
  * @date 2022/11/18 20:32
  */
-public class BiNode<T extends BiNode> {
+public class BiNode<T extends BiNode,G> {
     /**
      * 数据域
      */
-    public String data;
+    public G data;
 
     /**
      * 左孩子，右孩子
      */
     public T lChild, rChild;
 
-    public BiNode(String data) {
+    public BiNode(G data) {
         this.data = data;
     }
 
@@ -29,7 +29,7 @@ public class BiNode<T extends BiNode> {
 
     @Override
     public String toString() {
-        return data;
+        return data.toString();
     }
 
     /**

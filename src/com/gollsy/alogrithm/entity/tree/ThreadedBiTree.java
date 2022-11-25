@@ -7,7 +7,7 @@ package com.gollsy.alogrithm.entity.tree;
  * @description 线索二叉树
  * @date 2022/11/18 20:08
  */
-public class ThreadedBiTree extends BiNode<ThreadedBiTree>{
+public class ThreadedBiTree extends BiNode<ThreadedBiTree,String>{
 
     /**
      * 左、右节点线索标志，1为线索，0为子节点

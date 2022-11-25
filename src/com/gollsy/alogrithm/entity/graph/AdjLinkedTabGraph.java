@@ -1,5 +1,7 @@
 package com.gollsy.alogrithm.entity.graph;
 
+import java.util.List;
+
 /**
  * @author Admin
  * @version 1.0
@@ -19,10 +21,11 @@ public class AdjLinkedTabGraph {
      */
     public int nodeNum,arcNum;
 
+
     /**
      * 图中的边/弧
      */
-    static class Arc{
+    public static class Arc{
         public int vNodeIndex;
         public Arc nextArc;
     }
@@ -30,7 +33,9 @@ public class AdjLinkedTabGraph {
     /**
      * 图中的节点
      */
-    static class VNode{
+    public static class VNode{
+        public int index;
+
         public String data;
         //连接该节点的一条弧
         public Arc firstArc;

@@ -29,7 +29,7 @@ public class BiTreeTool {
      *
      * @return
      */
-    public static <T extends BiNode<T>> T generateEasyBiTree(Class<T> clazzName)
+    public static <T extends BiNode<T,String>> T generateEasyBiTree(Class<T> clazzName)
             throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         System.out.println("二叉树形如：\n" +
                 "              A\n" +
