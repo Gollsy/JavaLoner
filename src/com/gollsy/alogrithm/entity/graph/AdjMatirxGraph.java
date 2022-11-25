@@ -17,18 +17,21 @@ public class AdjMatirxGraph {
      */
     public Integer[][] data;
 
+    public int nodeNum;
+
 
     /**
      * @param nodeNum 节点个数
      */
     public AdjMatirxGraph(int nodeNum) {
-        this(nodeNum,0);
+        this(nodeNum, 0);
+        this.nodeNum = nodeNum;
     }
 
     public AdjMatirxGraph(int nodeNum, int defaultValue) {
         this.data = new Integer[nodeNum][nodeNum];
         for (Integer[] datum : this.data) {
-            Arrays.fill(datum,defaultValue);
+            Arrays.fill(datum, defaultValue);
         }
     }
 }

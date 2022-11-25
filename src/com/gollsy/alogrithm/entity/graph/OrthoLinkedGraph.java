@@ -19,10 +19,15 @@ public class OrthoLinkedGraph {
      */
     public int nodeNum,arcNum;
 
+    public VNode get(int index) {
+        if(nodeList==null) return null;
+        return nodeList[index];
+    }
+
     /**
      * 图中的边/弧
      */
-    static class Arc {
+    public static class Arc {
         //该有向弧的终点，弧头
         public int head;
         //该有向弧的起点，弧尾
@@ -36,11 +41,25 @@ public class OrthoLinkedGraph {
     /**
      * 图中的节点
      */
-    static class VNode{
+    public static class VNode{
+        public int index;
+
         public String data;
         //当前节点的一条入度的弧，不唯一
         public Arc oneInArc;
         //当前节点的一条出度的弧，不唯一
         public Arc oneOutArc;
+
+        public int outArcNum() {
+            if(oneOutArc == null){
+                return 0;
+            }
+            int count = 0;
+            while(oneOutArc!=null){
+                count++;
+                oneOutArc = oneOutArc.nextSameTailArc;
+            }
+            return count;
+        }
     }
 }

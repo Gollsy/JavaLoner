@@ -82,7 +82,7 @@ public class GraphTraverse {
     }
 
     /**
-     * 使用【广度有限遍历】求解单源最短路径
+     * 使用【广度有限遍历】求解单源最短路径，只针对【无权图】或【权值相等图】
      */
     public Integer[] BFS_MIN_DISTANCE(int nodeIndex, SqQueue<AdjLinkedTabGraph.VNode> queue){
         //distance[]表示顶点u到其他各个顶点的距离，初值null表示没有通路可达
