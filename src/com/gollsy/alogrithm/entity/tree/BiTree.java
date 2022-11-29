@@ -1,10 +1,5 @@
 package com.gollsy.alogrithm.entity.tree;
 
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
-
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-
 /**
  * @author Admin
  * @version 1.0
